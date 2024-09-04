@@ -1,0 +1,13 @@
+For 10ms delay:
+
+Atmega operating frequency = 8MHz = 8000000Hz
+Prescalar for timer clock frequency = 1024
+F timer clock = 8000000Hz/1024 = 7812.5Hz
+Time period for each timer tick = 1/7812.5 = 128us
+Number of timer cycles needed to generate delay = Time delay required/Time taken for each
+10ms/128us = (10*10^-3)/(128*10^-6) = 78.125 ~ 78 cycles
+ value to be put in TCNT0 register = 256-78 = 178 or 0xB2
+
+1/10MHz = .1us
+1/1MHz = 1us
+
